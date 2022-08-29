@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=C, initial-scale=1.0">
+    <title>Calculadora do Windows</title>
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+
+</head>
+<body>
+    <!-- 
+        Botões a serem adicionados
+        <div id="teste"> 
+        <button id="test1"> Save</button>
+        <button id="teste2"> Reg. </button>
+    </div> -->
+    <div class="calc">
+        <!-- Scroll para resultados grandes que não cabem no display -->
+        <div class="scroll"> 
+            <div id="display" 
+            class="display"> 0 </div>
+        </div>
+        <div class="calc-botoes">
+  
+            <button id="limparTudo" class="limparTudo">C</button>
+            <button id="apagar" class="apagar"> << </button>
+            <button id="porc">%</button>
+            <button id="sinaldividir" class="BtnsSinais">÷</button>
+            <button id="num7" class="botoes-numericos bgWhite">7</button>
+            <button id="num8" class="botoes-numericos bgWhite">8</button>
+            <button id="num9" class="botoes-numericos bgWhite">9</button>
+            <button id="sinalmultiplica" class="BtnsSinais">x</button>
+            <button id="num4" class="botoes-numericos bgWhite">4</button>
+            <button id="num5" class="botoes-numericos bgWhite">5</button>
+            <button id="num6" class="botoes-numericos bgWhite">6</button>
+            <button id="sinalsubtrair" class="BtnsSinais">-</button>
+            <button id="num1" class="botoes-numericos bgWhite">1</button>
+            <button id="num2" class="botoes-numericos bgWhite">2</button>
+            <button id="num3" class="botoes-numericos bgWhite">3</button>
+            <button id="sinalsomar" class="BtnsSinais">+</button>
+            <button id="maismenos" class="bgWhite">±</button>
+            <button id="num0" class="botoes-numericos bgWhite">0</button>
+            <button id="virg" class="bgWhite">,</button>
+            <button id="igual" class="bgIgual">=</button>
+        </div>
+    </div>
+    
+    <script src="./src/js/calc.js"></script>
+</body>
+</html>
