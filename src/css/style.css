@@ -1,0 +1,103 @@
+body{
+    background: #f5f5f5;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#teste{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: start; */
+    padding: 0.3rem;
+    height: 8rem;
+}
+
+#test1{
+   width: 9rem; 
+   margin-top: 0px;
+}
+
+#teste2{
+    width: 9rem; 
+    margin-top: 10px;
+}
+
+.calc {
+    align-items: center;
+    box-shadow: 15px 15px 20px rgb(0,0,0,0.1), 
+    -15px -15px 20px #fffb;
+    border-radius:20px;
+    display: flex;
+    flex-direction: column;
+    padding: 0.9rem;
+    width:auto;
+}
+
+.calc-botoes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 6px;
+}
+
+button{
+    width: 5rem;
+    height: 5rem;
+    border: none; 
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(0,0,0,0.1), 
+    -5px -5px 20px #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 1px;
+    cursor: pointer;
+    user-select: none;
+    color: rgb(102, 102, 102);
+}
+
+.bgIgual{
+    background-color: rgba(151, 235, 169, 0.616)
+}
+
+.limparTudo{
+    background-color:rgba(235, 151, 168, 0.616);
+}
+
+/* button:hover{
+    background-color: rgba(0, 221, 229, 0.616);
+    transition: 0.20s;
+} */
+
+button:active{
+    box-shadow: inset 8px 8px 15px rgba(0,0,0,0.1);
+    background-color: rgba(0, 221, 229, 0.616);
+}
+
+.bgWhite{
+    background-color: #f5f5f5;
+}
+
+.scroll {
+    width: 20rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.display{
+    background-color: rgba(214, 224, 245, 0.193);
+    font-weight: bold;
+    width: 100%;
+    text-align: end;
+    color: rgb(102, 102, 102);
+    font-size: 2em;
+    /* padding: 15px 5px; */
+    line-height: 100px;
+    box-shadow: inset 5px 5px 10px rgb(0,0,0,0.1),
+    inset -5px -5px 20px #fff;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 0 20px;
+}
+

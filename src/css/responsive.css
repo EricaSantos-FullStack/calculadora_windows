@@ -1,0 +1,19 @@
+@media(max-width: 600px){
+    button {
+       width: 4rem; 
+    }
+
+    .scroll{
+        width: 16rem;
+    }
+}
+
+@media(max-width: 300px){
+    button {
+       width: 3rem; 
+    }
+
+    .scroll{
+        width: 12rem;
+    }
+}
