@@ -16,10 +16,13 @@ const operadores = document.querySelectorAll("[id*=sinal]")
 // operador para armazenar o primeiro operador clicado
 // numero anterior para armazenar o numero que foi clicado antes do operador
 let primeiro = true;
-let operador;
-let numeroAnterior;
-let numeroAtual;
-let apagarIgual;
+let operador = null;
+let numeroAnterior = null;
+let numeroAtual = null;
+let apagarIgual = null;
+
+// variavel para pegar todo historico
+const historico = [];
 
 // variavel para mostrar a virgula no visor
 const ajustaPontoVirgula = () => display.textContent = display.textContent.replace('.', ',');
@@ -34,8 +37,12 @@ const inserirDisplay = text => {
         display.textContent += text //para concatenar o que vier depois do primeiro
     }
 
+    numeroAtual = parseFloat(display.textContent.replaceAll(',', '.')).toFixed(2); 
     display.textContent = display.textContent.substring(0, 17) //maximo de numeros na calculadora
-    numeroAtual = display.textContent;
+
+    // console.log(display.textContent.substring(0, 17), `numero de caracteres ${display.textContent.substring(0, 17).length}`)
+    // console.log(numeroAtual)
+    
     apagarIgual = true; // para apagar a conta do visor 
 }
 //função para exibir valores no visor
@@ -44,37 +51,62 @@ const inserirDisplay = text => {
 const inserir = e => inserirDisplay(e.target.textContent)
 nums.forEach(e => e.addEventListener('click', inserir))
 
-// forEach = ṕara cada item do for each que ele atribua o evento do clique para os operadores
-const inserirOperador = e => {
+// forEach = para cada item do for each que ele atribua o evento do clique para os operadores
+const inserirOperador = (element) => {
     primeiro = true;
-    operador = e.target.textContent;
+    operador = element.target.textContent;
 
     // alterando os operadores para o sistemar ler corretamente
-    if(operador === 'x'){
-        operador = '*'
-    } else if (operador === '÷') {
-        operador = '/'
-    }
-    numeroAnterior = display.textContent;
+    // if(operador === 'x'){
+    //     operador = '*'
+    // } else if (operador === '÷') {
+    //     operador = '/'
+    // }
+    numeroAnterior = parseFloat(display.textContent.replaceAll(',', '.')).toFixed(2); 
 }
 operadores.forEach(e => e.addEventListener('click', inserirOperador))
+
+const resultCalculo = (valorInicial = 0, operador = '', valorFinal = 0) => {
+    console.log(valorInicial, operador, valorFinal)
+
+    if (operador.includes('+')) {
+        return valorInicial + valorFinal
+    } else if(operador.includes('-')){
+        return valorInicial - valorFinal
+    } else if(operador.includes('÷')){
+        return valorInicial / valorFinal
+    } else if(operador.includes('x')){
+        return valorInicial * valorFinal
+    } else {
+        console.error('Operador não correspondente')
+    }
+}
 
 //função para calcular os numeradores e os operadores
 const calcular = () => {
 
     if (numeroAnterior && operador){
-        let result = numeroAnterior + operador
+        // let result = numeroAnterior + operador
+        // console.log(operador)
+        // console.log(typeof(operador))
+        console.log(resultCalculo(parseFloat(numeroAnterior), operador, parseFloat(numeroAtual)))
 
-        if(numeroAtual){
-            result += numeroAtual
-        } else {
-            result += numeroAnterior
-        }
+        // if(numeroAtual){
+        //     result += numeroAtual;
+        // } else {
+        //     result += numeroAnterior;
+        // }
+
+        // console.log(typeof(result))
+        console.log('hello world')
+        let result = '0,0'
         
         //eval() função javascript que efetua calculos
         //replace para alterar a virgula para o ponto - javascript não aceita virgulas
         display.textContent = eval(result.replace(',', '.'))
+        // display.textContent = eval(result.replace(',', '.'))
         ajustaPontoVirgula();
+
 
         //arrumando possiveis erros
         if (display.textContent === 'NaN')
@@ -122,7 +154,10 @@ const limpaTudo = () => {
 }
 limparTudo.addEventListener('click', limpaTudo)
 
-const  calcPorcentagem = () => {
+const calcPorcentagem = () => {
+    // resultCalculo()
+    console.log('to aqui')
+    console.log(display.textContent)
     display.textContent = parseFloat(display.textContent.replace(',', '.')) / 100
     ajustaPontoVirgula()
     numeroAtual = display.textContent;
@@ -130,3 +165,26 @@ const  calcPorcentagem = () => {
 }
 porcentagem.addEventListener('click', calcPorcentagem)
 
+// const insereVirg = () => {
+//     if (display.textContent.indexOf(',') == -1){
+//         display.textContent += ','
+//     }
+// }
+// virg.addEventListener('click', insereVirg)
+
+
+
+const decimal = () => display.textContent.indexOf(',') !== -1;
+const inserirDecimal = () => {
+    if(!decimal()){
+        if(display.textContent.length > 0){
+            display.textContent = display.textContent.replace(',', '.') + ','
+            ajustaPontoVirgula()
+        } else {
+            display.textContent = display.textContent.replace(',', '.') + '0,'
+            ajustaPontoVirgula()
+        }
+    }
+}
+
+virg.addEventListener('click', inserirDecimal)
