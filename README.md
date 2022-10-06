@@ -33,3 +33,5 @@ Na sua calculadora, você deverá implementar a nossa rotina para salvar o hist�
 O nome do arquivo deverá ser historico.txt
 
 E na propria estrutura da calculadora, você poderá escolher o arquivo de historico que foi armazenado o seu cáculadora.
+
+### Projeto em fase de implementação 🚧
