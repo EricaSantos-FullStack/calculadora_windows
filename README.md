@@ -1,37 +1,22 @@
 # calculadora_windows
-Calculadora simples desenvolvida durante a aula da GamaAcademy
+Calculadora desenvolvida para o projeto da Gama Academy
 
-teste
+## Atividade
 
-Montar uma calculadora com base
-
-no layout disponibilizado no 
-
-chat, e fazer todas as funções
-
-básicas como:
+Montar uma calculadora com base e fazer todas as funções como:
 
 + adição
-
 - subtração
-
 / divisão
-
 * multiplicação
-
 % percentual
-
 C Clear
-
 <= Voltar Backspace
-
 , casas decimais
 
 @ está opção deverá armazenar todo o histórico da nossa calculadora
 
-OBS.: Cuidado com o botão de 
-
-casas decimais
+OBS.: Cuidado com o botão de casas decimais
 
 OBS.: Na opção backsapace, utilizar o length-1
 
